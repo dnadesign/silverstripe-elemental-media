@@ -1,0 +1,9 @@
+---
+name: elemental-carbon-media
+---
+DNADesign\Elemental\Models\ElementMedia:
+  styles:
+    media-right-half: 'Media on the right, 1/2 width'
+    media-right-third: 'Media on the right, 1/3 width'
+    media-left-half: 'Media on the left, 1/2 width'
+    media-left-third: 'Media on the left, 1/3 width'
