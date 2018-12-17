@@ -10,6 +10,6 @@ class ElementMediaController extends ElementController
   {
     parent::init();
 
-    Requirements::css('dnadesign/silverstripe-elemental-carbon-media: client/css/element-media.css');
+    Requirements::css('dnadesign/silverstripe-elemental-media: client/css/element-media.css');
   }
 }
