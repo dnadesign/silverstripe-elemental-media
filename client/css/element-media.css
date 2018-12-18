@@ -64,6 +64,11 @@
   margin: 0 0 1rem;
 }
 
+.element-media__links {
+  margin: 0;
+  padding: 0;
+}
+
 @media (min-width: 992px) {
   .element-media {
     -webkit-box-orient: horizontal;

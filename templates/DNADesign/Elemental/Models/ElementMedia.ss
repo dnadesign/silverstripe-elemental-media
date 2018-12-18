@@ -16,6 +16,14 @@
       <% if $Text %>
         {$Text.Raw2P}
       <% end_if %>
+
+      <% if $Links %>
+        <ul class="element-spotlight__links">
+          <% loop $Links %>
+            <li>{$renderWith('DNADesign\Elemental\Models\MediaLink')}</li>
+          <% end_loop %>
+        </ul>
+      <% end_if %>
     </div>
   </div>
 </div>
