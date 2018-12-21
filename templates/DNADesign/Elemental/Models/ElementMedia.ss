@@ -28,12 +28,16 @@
   </div>
 </div>
 
-<% if $Image %>
+<% if $Image || $Video %>
   <div class="element-media__media">
     <% if $Image %>
       <div class="intrinsic element-media__image">
         {$Image.Lazyloaded}
       </div>
+    <% end_if %>
+
+    <% if $Video %>
+      {$Video}
     <% end_if %>
   </div>
 <% end_if %>

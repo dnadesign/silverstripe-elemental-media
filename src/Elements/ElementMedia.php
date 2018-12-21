@@ -5,7 +5,9 @@ namespace DNADesign\Elemental\Models;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Assets\Image;
 use gorriecoe\Link\Models\Link;
+use SilverShop\HasOneField\HasOneButtonField;
 use DNADesign\Elemental\Controllers\ElementMediaController;
+use DNADesign\YoutubeEmbed\YoutubeEmbed;
 
 class ElementMedia extends BaseElement
 {
@@ -27,6 +29,7 @@ class ElementMedia extends BaseElement
 
   private static $has_one = array(
     'Image' => Image::class,
+    'Video' => YoutubeEmbed::class
   );
 
   private static $many_many = array(
@@ -48,4 +51,17 @@ class ElementMedia extends BaseElement
   {
     return 'element-media';
   }
+
+  public function getCMSFields()
+  {
+    $fields = parent::getCMSFields();
+
+    $fields->removeByName('VideoID');
+    $video = HasOneButtonField::create($this, "Video");
+    $fields->addFieldToTab('Root.Main', $video);
+
+    return $fields;
+
+  }
+
 }
