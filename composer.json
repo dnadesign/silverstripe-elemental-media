@@ -1,6 +1,6 @@
 {
     "name": "dnadesign/silverstripe-elemental-media",
-    "description": "A media object element to position an image alongside content",
+    "description": "A media object element to position an image or video alongside content",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
@@ -14,7 +14,9 @@
     "require": {
         "dnadesign/silverstripe-elemental": "^3",
         "dnadesign/silverstripe-lazyloaded-image": "^0.2.0",
+        "dnadesign/silverstripe-youtube-embed": "dev-master",
         "gorriecoe/silverstripe-link": "^1.2.4",
+        "silvershop/silverstripe-hasonefield": "^2.1",
         "silverstripe/vendor-plugin": "^1.0"
     },
     "extra": {
@@ -23,6 +25,12 @@
             "client"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dnadesign/silverstripe-youtube-embed"
+        }
+    ],
     "license": "BSD-3-Clause",
     "minimum-stability": "dev"
 }
