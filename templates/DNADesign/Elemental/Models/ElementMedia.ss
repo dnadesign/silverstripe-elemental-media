@@ -29,7 +29,7 @@
 <% if $Image || $Video %>
   <div class="element-media__media">
     <% if $Image %>
-      <div class="intrinsic element-media__image">
+      <div class="element-media__image">
         {$Image.Lazyloaded}
       </div>
     <% end_if %>

@@ -1,29 +1,3 @@
-.intrinsic {
-  position: relative;
-  height: 100%;
-}
-
-.intrinsic:after {
-  content: '';
-  display: block;
-  height: 0;
-  width: 100%;
-  padding-bottom: calc(9 / 16 * 100%);
-}
-
-.intrinsic > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
-}
-
 .element-media {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,6 +15,8 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.element-media__image {}
 
 .element-media__content {
   padding: 2rem;
