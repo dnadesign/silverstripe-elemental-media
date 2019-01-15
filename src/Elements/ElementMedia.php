@@ -21,25 +21,16 @@ class ElementMedia extends BaseElement
 
   private static $controller_class = ElementMediaController::class;
 
-  private static $icon = 'font-icon-block-layout';
+  private static $icon = 'font-icon-block-media';
 
   private static $db = [
     'Text' => 'Text',
   ];
 
-  private static $has_one = array(
+  private static $has_one = [
     'Image' => Image::class,
-    'Video' => YoutubeEmbed::class
-  );
-
-  private static $many_many = array(
-    'Links' => Link::class,
-  );
-
-  private static $many_many_extraFields = [
-    'Links' => [
-      'Sort' => 'Int'
-    ]
+    'Video' => YoutubeEmbed::class,
+    'MediaLink' => Link::class,
   ];
 
   public function getType()
@@ -57,11 +48,13 @@ class ElementMedia extends BaseElement
     $fields = parent::getCMSFields();
 
     $fields->removeByName('VideoID');
-    $video = HasOneButtonField::create($this, "Video");
-    $fields->addFieldToTab('Root.Main', $video);
+    $fields->removeByName('MediaLinkID');
+
+    $fields->addFieldsToTab('Root.Main', [
+      HasOneButtonField::create($this, 'Video'),
+      HasOneButtonField::create($this, 'MediaLink', null, 'Link'),
+    ]);
 
     return $fields;
-
   }
-
 }
