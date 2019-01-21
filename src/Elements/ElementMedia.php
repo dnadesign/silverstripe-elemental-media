@@ -32,6 +32,10 @@ class ElementMedia extends BaseElement
     'Video' => YoutubeEmbed::class,
     'MediaLink' => Link::class,
   ];
+  
+  private static $owns = [
+    'Image',
+  ];  
 
   public function getType()
   {
