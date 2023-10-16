@@ -12,12 +12,12 @@
         "youtube"
     ],
     "require": {
-        "dnadesign/silverstripe-elemental": "^4.3",
-        "dnadesign/silverstripe-lazyloaded-image": "^0.5.0",
-        "dnadesign/silverstripe-youtube-embed": "^0.7.0",
-        "gorriecoe/silverstripe-link": "^1.2.4",
-        "silvershop/silverstripe-hasonefield": "^3",
-        "silverstripe/vendor-plugin": "^1.0"
+        "dnadesign/silverstripe-elemental": "^5",
+        "dnadesign/silverstripe-lazyloaded-image": "^1",
+        "dnadesign/silverstripe-youtube-embed": "^1",
+        "gorriecoe/silverstripe-link": "^1",
+        "silvershop/silverstripe-hasonefield": "^4",
+        "silverstripe/vendor-plugin": "^1.0 || ^2.0"
     },
     "extra": {
         "installer-name": "silverstripe-elemental-media",
