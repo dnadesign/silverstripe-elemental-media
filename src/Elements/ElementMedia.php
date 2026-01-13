@@ -4,7 +4,8 @@ namespace DNADesign\Elemental\Models;
 
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Assets\Image;
-use gorriecoe\Link\Models\Link;
+use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
 use SilverShop\HasOneField\HasOneButtonField;
 use DNADesign\Elemental\Controllers\ElementMediaController;
 use DNADesign\YoutubeEmbed\YoutubeEmbed;
@@ -34,7 +35,16 @@ class ElementMedia extends BaseElement
   ];
 
   private static $owns = [
+    'MediaLink',
     'Image',
+  ];
+
+  private static array $cascade_deletes = [
+    'MediaLink',
+  ];
+
+  private static array $cascade_duplicates = [
+    'MediaLink',
   ];
 
   public function getType()
@@ -52,11 +62,10 @@ class ElementMedia extends BaseElement
     $fields = parent::getCMSFields();
 
     $fields->removeByName('VideoID');
-    $fields->removeByName('MediaLinkID');
 
     $fields->addFieldsToTab('Root.Main', [
       HasOneButtonField::create($this, 'Video'),
-      HasOneButtonField::create($this, 'MediaLink', null, 'Link'),
+      LinkField::create('MediaLink', 'MediaLink'),
     ]);
 
     return $fields;
